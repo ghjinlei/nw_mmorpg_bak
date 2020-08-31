@@ -180,7 +180,7 @@ end
 local function try_clear_module(module)
 	-- TODO: clear
 	if TIMER then
-		TIMER.remove_all_timers(module)
+		TIMER.table_remove_all_timers(module)
 	end
 
 	if EVENT then
@@ -205,7 +205,7 @@ function reimport(relapath, data, env)
 		call_module_init(module, updated)
 
 		if EVENT then
-			EVENT.Dispatch(nil, EVENT.EVENT_MODULE_UPDATED, relapath, module)
+			EVENT.dispatch(nil, EVENT.EVENT_MODULE_UPDATED, relapath, module)
 		end
 	end
 end
