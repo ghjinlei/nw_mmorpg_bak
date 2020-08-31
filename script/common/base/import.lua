@@ -25,6 +25,10 @@ _G.setfenv = _G.setfenv or function(f, t)
 	return f
 end
 
+function is_module_imported(relapath)
+	return __import_modules(relapath)
+end
+
 local function loadluafile(relapath)
 	return g_loadfile(relapath, nil)
 end
